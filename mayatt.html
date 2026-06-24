@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAYATT — Eco Luxury Hotel | Tatiana Barboza</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Mayatt Eco Luxury Hotel — The Wellness Paradise en Arroyo de Piedra, Zona Norte de Cartagena. Un santuario de bienestar y lujo frente al mar. Planificación, seguridad y respaldo legal.">
+  <meta name="keywords" content="Mayatt, Eco Luxury Hotel, Arroyo de Piedra, Cartagena, Wellness Paradise, Inversión Hotelera, Tatiana Barboza, Fracción Hotelera, ROI">
+  <meta name="author" content="Tatiana Barboza">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind CSS Custom Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            onyx: '#0D0D0D',       // Dominante / Fondo de Bloques Principales
+            graphite: '#1A1A1A',   // Secundario / Contenedores
+            gold: '#C5A059',       // Acento / Iconos, marcos delgados
+            goldDark: '#A8833E',   // Acento Hover
+            goldLight: '#E8D5B5',  // Acento Brillo
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'Playfair Display', 'serif'],
+            sans: ['Montserrat', 'Inter', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles for UI, Scrollbars and input focus states -->
+  <style>
+    /* Custom Scrollbar to fit Onyx & Gold theme */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0D0D0D;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C5A059;
+      border: 2px solid #0D0D0D;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #A8833E;
+    }
+    
+    /* Input focus custom aesthetics */
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #C5A059 !important;
+      box-shadow: 0 0 0 1px #C5A059 !important;
+    }
+  </style>
+</head>
+<body class="bg-onyx text-white font-body selection:bg-gold selection:text-onyx min-h-screen flex flex-col overflow-x-hidden">
+
+  <!-- ========================================================================= -->
+  <!-- BARRA DE NAVEGACIÓN (NAVBAR)                                              -->
+  <!-- ========================================================================= -->
+  <header class="sticky top-0 z-50 bg-onyx border-b border-[#2A2A2A] w-full transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        
+        <!-- Logo -->
+        <a href="index.html" class="flex-shrink-0 flex items-center transition-transform duration-300 hover:scale-105" aria-label="TBARBOZA Inicio">
+          <img src="LOGO-TATIANA-HORIZONTAL-NAVBAR.svg" alt="TBARBOZA" class="h-12 w-auto max-w-[220px] object-contain">
+        </a>
+        
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex space-x-6 xl:space-x-8 items-center" aria-label="Navegación principal de Mayatt">
+          <a href="#inicio" class="text-white hover:text-gold font-sans text-xs tracking-wider font-semibold uppercase transition-all duration-300 py-2 border-b border-transparent hover:border-gold">El Proyecto</a>
+          <a href="#ficha-tecnica" class="text-white hover:text-gold font-sans text-xs tracking-wider font-semibold uppercase transition-all duration-300 py-2 border-b border-transparent hover:border-gold">Ficha Técnica</a>
+          <a href="#amenidades" class="text-white hover:text-gold font-sans text-xs tracking-wider font-semibold uppercase transition-all duration-300 py-2 border-b border-transparent hover:border-gold">Amenidades</a>
+          <a href="#galeria" class="text-white hover:text-gold font-sans text-xs tracking-wider font-semibold uppercase transition-all duration-300 py-2 border-b border-transparent hover:border-gold">Galería</a>
+          <a href="#inversion" class="text-white hover:text-gold font-sans text-xs tracking-wider font-semibold uppercase transition-all duration-300 py-2 border-b border-transparent hover:border-gold">Inversión</a>
+          <a href="#expansion" class="text-white hover:text-gold font-sans text-xs tracking-wider font-semibold uppercase transition-all duration-300 py-2 border-b border-transparent hover:border-gold">Expansión</a>
+          <a href="#ubicacion" class="text-white hover:text-gold font-sans text-xs tracking-wider font-semibold uppercase transition-all duration-300 py-2 border-b border-transparent hover:border-gold">Ubicación</a>
+          
+          <!-- Action CTA -->
+          <button onclick="openAppointmentModal('General')" class="bg-transparent border border-gold text-gold font-sans font-bold uppercase text-[10px] py-2.5 px-4 tracking-widest hover:bg-gold hover:text-onyx transition-all duration-300 rounded-none">
+            Agendar Cita
+          </button>
+        </nav>
+        
+        <!-- Mobile menu button -->
+        <div class="lg:hidden flex items-center">
+          <button id="mobile-menu-btn" type="button" class="text-white hover:text-gold focus:outline-none p-2 border border-transparent hover:border-gold transition-all duration-300" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú de navegación">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+        
+      </div>
+    </div>
+    
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-graphite border-b border-[#2A2A2A] px-4 pt-2 pb-6 space-y-3 transition-all duration-300 ease-in-out">
+      <a href="#inicio" class="block px-3 py-2 text-white hover:text-gold font-sans text-xs tracking-widest font-semibold uppercase transition-all duration-300">El Proyecto</a>
+      <a href="#ficha-tecnica" class="block px-3 py-2 text-white hover:text-gold font-sans text-xs tracking-widest font-semibold uppercase transition-all duration-300">Ficha Técnica</a>
+      <a href="#amenidades" class="block px-3 py-2 text-white hover:text-gold font-sans text-xs tracking-widest font-semibold uppercase transition-all duration-300">Amenidades</a>
+      <a href="#galeria" class="block px-3 py-2 text-white hover:text-gold font-sans text-xs tracking-widest font-semibold uppercase transition-all duration-300">Galería</a>
+      <a href="#inversion" class="block px-3 py-2 text-white hover:text-gold font-sans text-xs tracking-widest font-semibold uppercase transition-all duration-300">Inversión</a>
+      <a href="#expansion" class="block px-3 py-2 text-white hover:text-gold font-sans text-xs tracking-widest font-semibold uppercase transition-all duration-300">Expansión</a>
+      <a href="#ubicacion" class="block px-3 py-2 text-white hover:text-gold font-sans text-xs tracking-widest font-semibold uppercase transition-all duration-300">Ubicación</a>
+      <button onclick="openAppointmentModal('General')" class="w-full text-center bg-gold text-onyx border border-gold font-sans font-bold uppercase text-xs py-3 px-4 tracking-widest hover:bg-transparent hover:text-gold transition-all duration-300 rounded-none">
+        Agendar Cita
+      </button>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    
+    <!-- ========================================================================= -->
+    <!-- SECCIÓN 1: HERO / BANNER PRINCIPAL                                        -->
+    <!-- ========================================================================= -->
+    <section id="inicio" class="relative min-h-[95vh] flex items-center justify-center bg-cover bg-center bg-no-repeat" style="background-image: url('GALERIA-MAYATT/MAYATT%20EDIFICIO%20COMPLETO%20VISTA%20FRONTAL%20DESDE%20EL%20MAR%202.jpeg');">
+      
+      <!-- Heavy overlay for high contrast text readability -->
+      <div class="absolute inset-0 bg-black/80 z-10"></div>
+      
+      <!-- Inner thin gold frame representing structural security -->
+      <div class="absolute inset-4 sm:inset-6 md:inset-8 border border-gold/25 pointer-events-none z-20"></div>
+      <div class="absolute inset-5 sm:inset-7 md:inset-9 border border-gold/10 pointer-events-none z-20"></div>
+
+      <!-- Hero Content -->
+      <div class="relative z-30 max-w-5xl mx-auto px-6 py-24 text-center flex flex-col items-center">
+        
+        <!-- Emblem -->
+        <div class="mb-4 flex justify-center text-gold border border-gold/30 p-4 rounded-none hover:border-gold transition-colors duration-500">
+          <i class="fa-solid fa-umbrella-beach text-4xl"></i>
+        </div>
+
+        <span class="text-gold font-sans text-xs md:text-sm font-extrabold uppercase tracking-[0.25em] mb-4 text-center max-w-2xl leading-relaxed">
+          The Wellness Paradise / Living Wellness frente al mar. Un santuario donde el lujo se vive en armonía con la naturaleza.
+        </span>
+        
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-serif font-extrabold text-white tracking-tight mb-8 leading-tight max-w-4xl">
+          Mayatt Eco Luxury Hotel
+        </h1>
+        
+        <div class="h-1 w-24 bg-gold mb-10"></div>
+        
+        <!-- Legal & Location Gold Frame Container -->
+        <div class="max-w-4xl w-full border border-gold p-6 sm:p-8 bg-onyx/90 text-left mb-10 rounded-none relative">
+          <!-- Inner frame corners decoration -->
+          <div class="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-gold -translate-x-0.5 -translate-y-0.5"></div>
+          <div class="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-gold translate-x-0.5 -translate-y-0.5"></div>
+          <div class="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-gold -translate-x-0.5 translate-y-0.5"></div>
+          <div class="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-gold translate-x-0.5 translate-y-0.5"></div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 divide-y md:divide-y-0 md:divide-x divide-gold/30">
+            <!-- Location details -->
+            <div class="pb-6 md:pb-0 flex items-start gap-4">
+              <i class="fa-solid fa-location-dot text-gold text-xl shrink-0 mt-1"></i>
+              <div>
+                <span class="block text-[10px] font-sans font-bold uppercase tracking-widest text-gold mb-1">Ubicación</span>
+                <p class="text-xs sm:text-sm text-gray-200 font-light leading-relaxed">
+                  Arroyo de Piedra, Km 18, Zona Norte de Cartagena (a 20 minutos de Cartagena y 45 minutos de Barranquilla).
+                </p>
+              </div>
+            </div>
+            
+            <!-- Geographical context -->
+            <div class="pt-6 md:pt-0 md:pl-6 flex items-start gap-4">
+              <i class="fa-solid fa-earth-americas text-gold text-xl shrink-0 mt-1"></i>
+              <div>
+                <span class="block text-[10px] font-sans font-bold uppercase tracking-widest text-gold mb-1">Entorno geográfico</span>
+                <p class="text-xs sm:text-sm text-gray-200 font-light leading-relaxed">
+                  Terreno de seis mil metros cuadrados con acceso directo a una playa privada del Caribe colombiano, rodeado de selva y arena.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- CTA Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+          <button onclick="openAppointmentModal('Mayatt Hero')" class="bg-gold text-onyx border border-gold font-sans font-bold uppercase text-xs py-4 px-8 tracking-widest hover:bg-transparent hover:text-gold transition-all duration-300 rounded-none shadow-lg hover:shadow-gold/20">
+            Agendar Cita
+          </button>
+          <button onclick="openBrochureModal()" class="bg-transparent text-gold border-2 border-gold font-sans font-bold uppercase text-xs py-4 px-8 tracking-widest hover:bg-gold hover:text-onyx transition-all duration-300 rounded-none">
+            Descargar Brochure
+          </button>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECCIÓN 2: DESCRIPCIÓN GENERAL Y FICHA TÉCNICA                             -->
+    <!-- ========================================================================= -->
+    <section id="ficha-tecnica" class="bg-onyx py-24 border-b border-[#2A2A2A]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Commercial Text -->
+          <div class="lg:col-span-5 space-y-6">
+            <span class="text-gold font-sans text-xs font-bold uppercase tracking-[0.2em]">Desarrollo Estratégico</span>
+            <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white tracking-wide mt-2">
+              Respaldo y Solidez del Complejo.
+            </h2>
+            <div class="h-[2px] w-20 bg-gold mt-4 mb-8"></div>
+            <p class="text-gray-300 text-sm sm:text-base font-light leading-relaxed">
+              Mayatt nace en un terreno de seis mil metros cuadrados con acceso directo a una playa privada del Caribe colombiano. Aquí, el ruido de la rutina se queda atrás y el tiempo recupera el ritmo de las olas. Veinte cabañas y un edificio central de tres niveles conviven con la selva y la arena, pensados para que el lujo se sienta, no se anuncie.
+            </p>
+            <div class="border border-[#2A2A2A] bg-graphite p-6 relative">
+              <span class="block text-[10px] text-gold font-bold uppercase tracking-widest mb-2">Comercialización & Construcción</span>
+              <p class="text-xs text-gray-400 font-light leading-relaxed">
+                Este proyecto cuenta con la solidez de una alianza institucional, donde la comercialización está a cargo de **Propfy** y la construcción es ejecutada por la firma **Construmas**, garantizando rigurosos estándares técnicos y contractuales.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Technical specifications blocks -->
+          <div class="lg:col-span-7 space-y-4">
+            
+            <!-- Box 1 -->
+            <div class="border border-gold/30 bg-graphite p-6 rounded-none hover:border-gold transition-colors duration-300">
+              <div class="flex items-center gap-4">
+                <div class="text-gold border border-gold/20 p-3 bg-onyx shrink-0">
+                  <i class="fa-solid fa-maximize text-xl"></i>
+                </div>
+                <div>
+                  <span class="block text-[9px] font-sans font-bold uppercase tracking-widest text-gold mb-1">Dimensión del Complejo</span>
+                  <p class="text-sm sm:text-base text-white font-serif font-semibold">
+                    Área Total del Terreno: 6.000 m² frente al mar.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Box 2 -->
+            <div class="border border-gold/30 bg-graphite p-6 rounded-none hover:border-gold transition-colors duration-300">
+              <div class="flex items-center gap-4">
+                <div class="text-gold border border-gold/20 p-3 bg-onyx shrink-0">
+                  <i class="fa-solid fa-hotel text-xl"></i>
+                </div>
+                <div>
+                  <span class="block text-[9px] font-sans font-bold uppercase tracking-widest text-gold mb-1">Capacidad Logística</span>
+                  <p class="text-sm sm:text-base text-white font-serif font-semibold">
+                    Capacidad Hotelera: 20 cabañas privadas + 1 edificio central de tres niveles.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Box 3 -->
+            <div class="border border-gold/30 bg-graphite p-6 rounded-none hover:border-gold transition-colors duration-300">
+              <div class="flex items-center gap-4">
+                <div class="text-gold border border-gold/20 p-3 bg-onyx shrink-0">
+                  <i class="fa-solid fa-calendar-check text-xl"></i>
+                </div>
+                <div>
+                  <span class="block text-[9px] font-sans font-bold uppercase tracking-widest text-gold mb-1">Etapa de la Inversión</span>
+                  <p class="text-sm sm:text-base text-white font-serif font-semibold">
+                    Estado Comercial: En Preventa / Lanzamiento 2026.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Box 4 -->
+            <div class="border border-gold/30 bg-graphite p-6 rounded-none hover:border-gold transition-colors duration-300">
+              <div class="flex items-center gap-4">
+                <div class="text-gold border border-gold/20 p-3 bg-onyx shrink-0">
+                  <i class="fa-solid fa-handshake-simple text-xl"></i>
+                </div>
+                <div>
+                  <span class="block text-[9px] font-sans font-bold uppercase tracking-widest text-gold mb-1">Operadores Institucionales</span>
+                  <p class="text-sm sm:text-base text-white font-serif font-semibold">
+                    Alianzas y Operación: Comercializa Propfy y construye Construmas.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Box 5 -->
+            <div class="border border-gold bg-graphite p-6 rounded-none relative">
+              <div class="absolute inset-1 border border-gold/10 pointer-events-none"></div>
+              <div class="flex items-start gap-4">
+                <div class="text-gold border border-gold/30 p-3 bg-onyx shrink-0">
+                  <i class="fa-solid fa-mobile-screen-button text-xl"></i>
+                </div>
+                <div>
+                  <span class="block text-[9px] font-sans font-bold uppercase tracking-widest text-gold mb-1">Transparencia y Trazabilidad</span>
+                  <p class="text-xs sm:text-sm text-white font-serif font-semibold mb-2">
+                    Transparencia de Gestión: Rendición de cuentas y seguimiento del proceso 100% transparente a través de la App MAYATT (actualmente en desarrollo).
+                  </p>
+                  <span class="inline-flex items-center gap-1.5 text-[10px] font-sans text-gold bg-gold/10 px-2 py-0.5">
+                    <i class="fa-solid fa-shield-halved"></i> Auditado por Tatiana Barboza
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECCIÓN 3: LOS CUATRO PILARES (FILOSOFÍA)                                 -->
+    <!-- ========================================================================= -->
+    <section class="bg-graphite py-24 border-b border-[#2A2A2A]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-gold font-sans text-xs font-bold uppercase tracking-[0.2em]">Filosofía del Desarrollo</span>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white tracking-wide mt-2">
+            Ejes de Respaldo Patrimonial.
+          </h2>
+          <div class="h-[2px] w-20 bg-gold mt-4 mx-auto"></div>
+        </div>
+        
+        <!-- 4 Pillars Grid (Seals) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Pillar 1 -->
+          <div class="border border-gold/30 p-8 bg-onyx flex flex-col justify-between hover:border-gold transition-all duration-300 relative group rounded-none">
+            <span class="absolute top-4 right-6 font-serif text-3xl font-black text-gold/15 group-hover:text-gold/30 transition-colors">I</span>
+            <div>
+              <div class="text-gold mb-6">
+                <i class="fa-solid fa-seedling text-3xl"></i>
+              </div>
+              <h3 class="text-base font-serif font-bold text-white mb-3 tracking-wide uppercase">
+                Vivir en Armonía Total
+              </h3>
+              <p class="text-gray-400 text-xs font-light leading-relaxed">
+                Naturaleza, arquitectura y bienestar en un mismo ritmo.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Pillar 2 -->
+          <div class="border border-gold/30 p-8 bg-onyx flex flex-col justify-between hover:border-gold transition-all duration-300 relative group rounded-none">
+            <span class="absolute top-4 right-6 font-serif text-3xl font-black text-gold/15 group-hover:text-gold/30 transition-colors">II</span>
+            <div>
+              <div class="text-gold mb-6">
+                <i class="fa-solid fa-shield-halved text-3xl"></i>
+              </div>
+              <h3 class="text-base font-serif font-bold text-white mb-3 tracking-wide uppercase">
+                Inversión Patrimonial Segura
+              </h3>
+              <p class="text-gray-400 text-xs font-light leading-relaxed">
+                Un activo real, con respaldo en la tierra y en el modelo de negocio.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Pillar 3 -->
+          <div class="border border-gold/30 p-8 bg-onyx flex flex-col justify-between hover:border-gold transition-all duration-300 relative group rounded-none">
+            <span class="absolute top-4 right-6 font-serif text-3xl font-black text-gold/15 group-hover:text-gold/30 transition-colors">III</span>
+            <div>
+              <div class="text-gold mb-6">
+                <i class="fa-solid fa-crown text-3xl"></i>
+              </div>
+              <h3 class="text-base font-serif font-bold text-white mb-3 tracking-wide uppercase">
+                Exclusividad y Disfrute
+              </h3>
+              <p class="text-gray-400 text-xs font-light leading-relaxed">
+                Espacios pensados para pocos, vividos al máximo.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Pillar 4 -->
+          <div class="border border-gold/30 p-8 bg-onyx flex flex-col justify-between hover:border-gold transition-all duration-300 relative group rounded-none">
+            <span class="absolute top-4 right-6 font-serif text-3xl font-black text-gold/15 group-hover:text-gold/30 transition-colors">IV</span>
+            <div>
+              <div class="text-gold mb-6">
+                <i class="fa-solid fa-link text-3xl"></i>
+              </div>
+              <h3 class="text-base font-serif font-bold text-white mb-3 tracking-wide uppercase">
+                Conexión Profunda
+              </h3>
+              <p class="text-gray-400 text-xs font-light leading-relaxed">
+                Con el lugar, con las personas y con uno mismo.
+              </p>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECCIÓN 4: AMENIDADES (ECOSISTEMA DE BIENESTAR)                           -->
+    <!-- ========================================================================= -->
+    <section id="amenidades" class="bg-onyx py-24 border-b border-[#2A2A2A]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="max-w-3xl mb-16">
+          <span class="text-gold font-sans text-xs font-bold uppercase tracking-[0.2em]">Servicios de Altura</span>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white tracking-wide mt-2">
+            Infraestructura Certificada de Bienestar.
+          </h2>
+          <div class="h-[2px] w-20 bg-gold mt-4"></div>
+        </div>
+        
+        <!-- 10 Amenities Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          
+          <!-- Amenity 1 -->
+          <div class="border border-[#2A2A2A] bg-graphite p-6 flex flex-col justify-between hover:border-gold transition-all duration-300 rounded-none group">
+            <div class="text-gold text-2xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-utensils"></i>
+            </div>
+            <div>
+              <h3 class="text-xs font-sans font-bold uppercase tracking-wider text-white mb-1.5">Restaurante 24 horas</h3>
+              <p class="text-[11px] text-gray-400 font-light leading-relaxed">
+                Cocina abierta a cualquier hora del día o de la noche.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Amenity 2 -->
+          <div class="border border-[#2A2A2A] bg-graphite p-6 flex flex-col justify-between hover:border-gold transition-all duration-300 rounded-none group">
+            <div class="text-gold text-2xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-martini-glass-citrus"></i>
+            </div>
+            <div>
+              <h3 class="text-xs font-sans font-bold uppercase tracking-wider text-white mb-1.5">Rooftop Bar</h3>
+              <p class="text-[11px] text-gray-400 font-light leading-relaxed">
+                Vistas al Caribe desde lo más alto del edificio central.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Amenity 3 -->
+          <div class="border border-[#2A2A2A] bg-graphite p-6 flex flex-col justify-between hover:border-gold transition-all duration-300 rounded-none group">
+            <div class="text-gold text-2xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-spa"></i>
+            </div>
+            <div>
+              <h3 class="text-xs font-sans font-bold uppercase tracking-wider text-white mb-1.5">SPA</h3>
+              <p class="text-[11px] text-gray-400 font-light leading-relaxed">
+                Rituales de bienestar inspirados en la naturaleza del Caribe.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Amenity 4 -->
+          <div class="border border-gold/30 bg-graphite p-6 flex flex-col justify-between hover:border-gold transition-all duration-300 rounded-none group">
+            <div class="text-gold text-2xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-water"></i>
+            </div>
+            <div>
+              <h3 class="text-xs font-sans font-bold uppercase tracking-wider text-white mb-1.5 text-gold">Piscina Natural</h3>
+              <p class="text-[11px] text-gray-400 font-light leading-relaxed">
+                Área de 280 m², consolidándose como una de las piscinas naturales más grandes de la zona norte.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Amenity 5 -->
+          <div class="border border-[#2A2A2A] bg-graphite p-6 flex flex-col justify-between hover:border-gold transition-all duration-300 rounded-none group">
+            <div class="text-gold text-2xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-temperature-arrow-up"></i>
+            </div>
+            <div>
+              <h3 class="text-xs font-sans font-bold uppercase tracking-wider text-white mb-1.5">Sauna</h3>
+              <p class="text-[11px] text-gray-400 font-light leading-relaxed">
+                Calor seco para liberar tensión y recargar el cuerpo.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Amenity 6 -->
+          <div class="border border-[#2A2A2A] bg-graphite p-6 flex flex-col justify-between hover:border-gold transition-all duration-300 rounded-none group">
+            <div class="text-gold text-2xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-smog"></i>
+            </div>
+            <div>
+              <h3 class="text-xs font-sans font-bold uppercase tracking-wider text-white mb-1.5">Baño Turco</h3>
+              <p class="text-[11px] text-gray-400 font-light leading-relaxed">
+                Vapor y calma en un mismo espacio.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Amenity 7 -->
+          <div class="border border-[#2A2A2A] bg-graphite p-6 flex flex-col justify-between hover:border-gold transition-all duration-300 rounded-none group">
+            <div class="text-gold text-2xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-dumbbell"></i>
+            </div>
+            <div>
+              <h3 class="text-xs font-sans font-bold uppercase tracking-wider text-white mb-1.5">Gimnasio</h3>
+              <p class="text-[11px] text-gray-400 font-light leading-relaxed">
+                Equipado para mantener el ritmo del bienestar diario.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Amenity 8 -->
+          <div class="border border-[#2A2A2A] bg-graphite p-6 flex flex-col justify-between hover:border-gold transition-all duration-300 rounded-none group">
+            <div class="text-gold text-2xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <div>
+              <h3 class="text-xs font-sans font-bold uppercase tracking-wider text-white mb-1.5">Coworking</h3>
+              <p class="text-[11px] text-gray-400 font-light leading-relaxed">
+                Espacios para seguir creando en medio del entorno natural.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Amenity 9 -->
+          <div class="border border-[#2A2A2A] bg-graphite p-6 flex flex-col justify-between hover:border-gold transition-all duration-300 rounded-none group">
+            <div class="text-gold text-2xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-gamepad"></i>
+            </div>
+            <div>
+              <h3 class="text-xs font-sans font-bold uppercase tracking-wider text-white mb-1.5">Sala de Entretenimiento</h3>
+              <p class="text-[11px] text-gray-400 font-light leading-relaxed">
+                Un espacio para compartir y desconectar en comunidad.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Amenity 10 -->
+          <div class="border border-gold/30 bg-graphite p-6 flex flex-col justify-between hover:border-gold transition-all duration-300 rounded-none group">
+            <div class="text-gold text-2xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-umbrella-beach"></i>
+            </div>
+            <div>
+              <h3 class="text-xs font-sans font-bold uppercase tracking-wider text-white mb-1.5 text-gold">Playa Privada</h3>
+              <p class="text-[11px] text-gray-400 font-light leading-relaxed">
+                Acceso directo y sin intermediarios entre el usuario y el mar.
+              </p>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECCIÓN 5: GALERÍA DEL PROYECTO (RETÍCULA/CUADRÍCULA FIJA)                 -->
+    <!-- ========================================================================= -->
+    <section id="galeria" class="bg-graphite py-24 border-b border-[#2A2A2A]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-gold font-sans text-xs font-bold uppercase tracking-[0.2em]">Inspección Visual</span>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white tracking-wide mt-2">
+            Registro Visual y Arquitectónico.
+          </h2>
+          <div class="h-[2px] w-20 bg-gold mt-4 mx-auto"></div>
+        </div>
+        
+        <!-- Static 6-Image Grid (NO CAROUSELS OR SCROLLING) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Image 1 -->
+          <div class="border border-[#2A2A2A] bg-onyx p-3 rounded-none flex flex-col group hover:border-gold transition-all duration-500">
+            <div class="relative overflow-hidden h-64 border border-[#2A2A2A]">
+              <div class="absolute inset-0 bg-black/35 group-hover:bg-black/10 transition-all duration-500 z-10"></div>
+              <img src="GALERIA-MAYATT/MAYATT%20EDIFICIO%20COMPLETO%20VISTA%20FRONTAL%20DESDE%20EL%20MAR%202.jpeg" alt="Fachada o vista del edificio central" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700">
+            </div>
+            <div class="pt-4 px-2">
+              <span class="block text-[9px] font-sans font-bold uppercase tracking-widest text-gold mb-1">Registro Arquitectónico</span>
+              <h4 class="font-serif text-sm font-bold text-white tracking-wide uppercase">Fachada de Edificio Central</h4>
+            </div>
+          </div>
+          
+          <!-- Image 2 -->
+          <div class="border border-[#2A2A2A] bg-onyx p-3 rounded-none flex flex-col group hover:border-gold transition-all duration-500">
+            <div class="relative overflow-hidden h-64 border border-[#2A2A2A]">
+              <div class="absolute inset-0 bg-black/35 group-hover:bg-black/10 transition-all duration-500 z-10"></div>
+              <img src="GALERIA-MAYATT/MAYATT%20CABA%C3%91A%20MATRI%20DENTRO%202.jpeg" alt="Cabaña matrimonial" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700">
+            </div>
+            <div class="pt-4 px-2">
+              <span class="block text-[9px] font-sans font-bold uppercase tracking-widest text-gold mb-1">Interior Premium</span>
+              <h4 class="font-serif text-sm font-bold text-white tracking-wide uppercase">Cabaña Matrimonial</h4>
+            </div>
+          </div>
+          
+          <!-- Image 3 -->
+          <div class="border border-[#2A2A2A] bg-onyx p-3 rounded-none flex flex-col group hover:border-gold transition-all duration-500">
+            <div class="relative overflow-hidden h-64 border border-[#2A2A2A]">
+              <div class="absolute inset-0 bg-black/35 group-hover:bg-black/10 transition-all duration-500 z-10"></div>
+              <img src="GALERIA-MAYATT/MAYATT-CABANAS-FRENTE-AL-MAR.jpeg" alt="Piscina natural de 280 m²" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700">
+            </div>
+            <div class="pt-4 px-2">
+              <span class="block text-[9px] font-sans font-bold uppercase tracking-widest text-gold mb-1">Ecosistema Central</span>
+              <h4 class="font-serif text-sm font-bold text-white tracking-wide uppercase">Piscina Natural de 280 m²</h4>
+            </div>
+          </div>
+          
+          <!-- Image 4 -->
+          <div class="border border-[#2A2A2A] bg-onyx p-3 rounded-none flex flex-col group hover:border-gold transition-all duration-500">
+            <div class="relative overflow-hidden h-64 border border-[#2A2A2A]">
+              <div class="absolute inset-0 bg-black/35 group-hover:bg-black/10 transition-all duration-500 z-10"></div>
+              <img src="GALERIA-MAYATT/MAYATT%20ROOFTOP%20BAR%20BALC%C3%93N.jpeg" alt="Rooftop bar al atardecer" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700">
+            </div>
+            <div class="pt-4 px-2">
+              <span class="block text-[9px] font-sans font-bold uppercase tracking-widest text-gold mb-1">Amenidad de Altura</span>
+              <h4 class="font-serif text-sm font-bold text-white tracking-wide uppercase">Rooftop Bar al Atardecer</h4>
+            </div>
+          </div>
+          
+          <!-- Image 5 -->
+          <div class="border border-[#2A2A2A] bg-onyx p-3 rounded-none flex flex-col group hover:border-gold transition-all duration-500">
+            <div class="relative overflow-hidden h-64 border border-[#2A2A2A]">
+              <div class="absolute inset-0 bg-black/35 group-hover:bg-black/10 transition-all duration-500 z-10"></div>
+              <img src="GALERIA-MAYATT/MAYATT-CABANA-MATRI-AFUERA.jpeg" alt="Playa privada del complejo" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700">
+            </div>
+            <div class="pt-4 px-2">
+              <span class="block text-[9px] font-sans font-bold uppercase tracking-widest text-gold mb-1">Entorno Exclusivo</span>
+              <h4 class="font-serif text-sm font-bold text-white tracking-wide uppercase">Playa Privada del Complejo</h4>
+            </div>
+          </div>
+          
+          <!-- Image 6 -->
+          <div class="border border-[#2A2A2A] bg-onyx p-3 rounded-none flex flex-col group hover:border-gold transition-all duration-500">
+            <div class="relative overflow-hidden h-64 border border-[#2A2A2A]">
+              <div class="absolute inset-0 bg-black/35 group-hover:bg-black/10 transition-all duration-500 z-10"></div>
+              <img src="GALERIA-MAYATT/MAYATT-CABANA-DUPLEX.jpeg" alt="Vista aérea o toma de dron" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700">
+            </div>
+            <div class="pt-4 px-2">
+              <span class="block text-[9px] font-sans font-bold uppercase tracking-widest text-gold mb-1">Proyección Territorial</span>
+              <h4 class="font-serif text-sm font-bold text-white tracking-wide uppercase">Toma de Dron Arroyo de Piedra</h4>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECCIÓN 6: PLAN DE FINANCIACIÓN Y BENEFICIOS DEL ACCIONISTA               -->
+    <!-- ========================================================================= -->
+    <section id="inversion" class="bg-onyx py-24 border-b border-[#2A2A2A]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="max-w-3xl mb-16">
+          <span class="text-gold font-sans text-xs font-bold uppercase tracking-[0.2em]">Estructura de Inversión</span>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white tracking-wide mt-2">
+            Estructura Financiera y Garantías de Retorno.
+          </h2>
+          <div class="h-[2px] w-20 bg-gold mt-4"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+          
+          <!-- Column 1: Financial Plan Cards -->
+          <div class="lg:col-span-6 flex flex-col justify-between space-y-6">
+            <div class="border-2 border-gold bg-graphite p-8 relative rounded-none flex-grow">
+              <div class="absolute inset-1.5 border border-gold/15 pointer-events-none"></div>
+              <span class="text-gold font-sans text-[10px] font-bold uppercase tracking-widest block mb-4">Plan de Financiación de la Acción</span>
+              
+              <!-- Specs Grid -->
+              <div class="space-y-6">
+                <div class="flex justify-between items-end border-b border-[#2A2A2A] pb-3">
+                  <span class="text-xs text-gray-400 font-sans uppercase">Valor Total de la Acción</span>
+                  <span class="font-serif text-xl sm:text-2xl font-bold text-white">$60.000.000 COP</span>
+                </div>
+                
+                <div class="flex justify-between items-end border-b border-[#2A2A2A] pb-3">
+                  <span class="text-xs text-gray-400 font-sans uppercase">Cuota de Separación</span>
+                  <span class="font-serif text-lg font-semibold text-gold">$2.000.000 COP</span>
+                </div>
+                
+                <div class="flex justify-between items-end border-b border-[#2A2A2A] pb-3">
+                  <span class="text-xs text-gray-400 font-sans uppercase">Cuota Inicial</span>
+                  <span class="font-serif text-lg font-semibold text-white">30% del valor total</span>
+                </div>
+                
+                <div class="flex justify-between items-end border-b border-[#2A2A2A] pb-3">
+                  <span class="text-xs text-gray-400 font-sans uppercase">Saldo Restante</span>
+                  <span class="font-serif text-lg font-semibold text-white">70% financiado</span>
+                </div>
+                
+                <div class="flex justify-between items-end">
+                  <span class="text-xs text-gray-400 font-sans uppercase">Plazo de Financiación</span>
+                  <span class="font-serif text-xs font-semibold text-gold uppercase tracking-wider">De 12 a 18 meses</span>
+                </div>
+              </div>
+            </div>
+            
+            <button onclick="openAppointmentModal('Mayatt Inversión')" class="w-full bg-gold text-onyx border border-gold font-sans font-bold uppercase text-xs py-4 px-8 tracking-widest hover:bg-transparent hover:text-gold transition-all duration-300 rounded-none">
+              Solicitar Cotización de Acción
+            </button>
+          </div>
+          
+          <!-- Column 2: Official Document Enmarcado (Business Model) -->
+          <div class="lg:col-span-6 bg-graphite border border-[#2A2A2A] p-8 sm:p-10 relative flex flex-col justify-between rounded-none">
+            <div class="absolute inset-2 border border-gold/10 pointer-events-none"></div>
+            
+            <!-- Header of Doc -->
+            <div class="flex justify-between items-start mb-6 pb-4 border-b border-[#2A2A2A]">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-scale-balanced text-2xl text-gold"></i>
+                <h3 class="font-serif text-base font-bold text-white uppercase tracking-wider">Certificación del Modelo</h3>
+              </div>
+              <span class="text-[9px] font-sans font-semibold bg-[#2A2A2A] px-2 py-0.5 border border-[#3A3A3A] text-gray-400 uppercase tracking-widest">Tatiana Barboza</span>
+            </div>
+            
+            <!-- Body of Doc -->
+            <div class="space-y-6 text-sm font-light leading-relaxed flex-grow">
+              
+              <!-- Metric ROI -->
+              <div class="border border-gold/25 p-4 bg-onyx flex items-center justify-between">
+                <span class="text-xs font-sans font-bold text-gray-400 uppercase">Retorno de Inversión (ROI)</span>
+                <span class="font-serif text-xl sm:text-2xl font-black text-gold">35% al 39% <span class="text-xs font-sans">Anual</span></span>
+              </div>
+              
+              <div class="space-y-4 font-sans text-xs">
+                <div>
+                  <span class="block font-bold text-gold uppercase tracking-wider mb-1">Derechos de Uso Anual por Acción:</span>
+                  <p class="text-gray-300 leading-relaxed text-[11px]">
+                    30 noches en total al año, distribuidas de la siguiente manera: 15 noches de renta y 15 noches de uso exclusivo para el accionista.
+                  </p>
+                </div>
+                
+                <div>
+                  <span class="block font-bold text-white uppercase tracking-wider mb-1">Tarifa por Noche Estipulada:</span>
+                  <p class="text-gray-300 leading-relaxed text-[11px]">
+                    Definida en <span class="text-gold font-semibold">$600.000 COP</span> para garantizar un margen financiero estructurado.
+                  </p>
+                </div>
+                
+                <div class="pt-4 border-t border-[#2A2A2A]">
+                  <span class="block font-bold text-white uppercase tracking-wider mb-1">Ventaja Operativa Inmobiliaria:</span>
+                  <p class="text-gray-300 leading-relaxed text-[11px]">
+                    El modelo de ingresos por noches de hospitalidad convierte la acción en un patrimonio que rentabiliza solo, sin que el propietario tenga que encargarse de la administración.
+                  </p>
+                </div>
+              </div>
+              
+            </div>
+            
+            <!-- Legal Seal footer -->
+            <div class="mt-6 pt-4 border-t border-[#2A2A2A] flex items-center justify-between text-[10px] text-gray-500 font-sans uppercase tracking-widest">
+              <span>Firma Tatiana Barboza</span>
+              <span class="text-gold">Sello Oficial</span>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECCIÓN 7: PLAN DE EXPANSION (TEJIENDO DESTINOS - UBICACIÓN EXCLUSIVA)   -->
+    <!-- ========================================================================= -->
+    <section id="expansion" class="bg-graphite py-24 border-b border-[#2A2A2A]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="max-w-3xl mb-16">
+          <span class="text-gold font-sans text-xs font-bold uppercase tracking-[0.2em]">Crecimiento Nacional</span>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white tracking-wide mt-2">
+            Proyección y Expansión Geográfica.
+          </h2>
+          <div class="h-[2px] w-20 bg-gold mt-4 mb-6"></div>
+          <p class="text-gray-300 text-sm sm:text-base font-light leading-relaxed">
+            Mayatt es el inicio de una red de ecosistemas de bienestar que crecerá por las geografías más auténticas del país bajo el siguiente cronograma de proyecciones:
+          </p>
+        </div>
+        
+        <!-- Modular structured timeline with solid blocks and local images from DESTINOS/ -->
+        <div class="relative border-l border-gold/30 ml-4 md:ml-0 md:border-l-0 md:grid md:grid-cols-5 md:gap-6 space-y-12 md:space-y-0">
+          
+          <!-- Horizontal line connecting the dots (desktop only) -->
+          <div class="absolute top-[12px] left-0 right-0 h-[2px] bg-gold/30 hidden md:block z-0"></div>
+          
+          <!-- Hito 1: 2026 -->
+          <div class="relative md:text-center pl-8 md:pl-0 md:pt-8">
+            <!-- Timeline dot -->
+            <div class="absolute -left-[6px] top-2 md:left-1/2 md:-translate-x-1/2 md:top-1 w-4 h-4 bg-gold border-4 border-onyx z-20"></div>
+            
+            <!-- Content Block -->
+            <div class="border border-[#2A2A2A] bg-onyx p-4 rounded-none group hover:border-gold transition-colors duration-300 flex flex-col h-full">
+              <span class="font-serif text-xl font-bold text-gold block mb-2">2026</span>
+              <div class="relative h-32 overflow-hidden mb-3 border border-[#2A2A2A]">
+                <img src="DESTINOS/CARTAGENA.jpg" alt="Cartagena" class="w-full h-full object-cover">
+              </div>
+              <h4 class="font-serif text-sm font-bold text-white uppercase tracking-wider mb-1">Cartagena</h4>
+              <span class="text-[10px] font-sans text-gray-500 uppercase tracking-widest">Sede Fundadora</span>
+            </div>
+          </div>
+          
+          <!-- Hito 2: 2027 -->
+          <div class="relative md:text-center pl-8 md:pl-0 md:pt-8">
+            <!-- Timeline dot -->
+            <div class="absolute -left-[6px] top-2 md:left-1/2 md:-translate-x-1/2 md:top-1 w-4 h-4 bg-gold/50 border-4 border-onyx z-20"></div>
+            
+            <!-- Content Block -->
+            <div class="border border-[#2A2A2A] bg-onyx p-4 rounded-none group hover:border-gold transition-colors duration-300 flex flex-col h-full">
+              <span class="font-serif text-xl font-bold text-gold block mb-2">2027</span>
+              <div class="relative h-32 overflow-hidden mb-3 border border-[#2A2A2A]">
+                <img src="DESTINOS/BARU.jpg" alt="Barú" class="w-full h-full object-cover">
+              </div>
+              <h4 class="font-serif text-sm font-bold text-white uppercase tracking-wider mb-1">Barú</h4>
+              <span class="text-[10px] font-sans text-gray-500 uppercase tracking-widest">Fase de Diseño</span>
+            </div>
+          </div>
+          
+          <!-- Hito 3: 2029 -->
+          <div class="relative md:text-center pl-8 md:pl-0 md:pt-8">
+            <!-- Timeline dot -->
+            <div class="absolute -left-[6px] top-2 md:left-1/2 md:-translate-x-1/2 md:top-1 w-4 h-4 bg-gold/50 border-4 border-onyx z-20"></div>
+            
+            <!-- Content Block -->
+            <div class="border border-[#2A2A2A] bg-onyx p-4 rounded-none group hover:border-gold transition-colors duration-300 flex flex-col h-full">
+              <span class="font-serif text-xl font-bold text-gold block mb-2">2029</span>
+              <div class="relative h-32 overflow-hidden mb-3 border border-[#2A2A2A]">
+                <img src="DESTINOS/STMARTA.jpg" alt="Santa Marta" class="w-full h-full object-cover">
+              </div>
+              <h4 class="font-serif text-sm font-bold text-white uppercase tracking-wider mb-1">Santa Marta</h4>
+              <span class="text-[10px] font-sans text-gray-500 uppercase tracking-widest">Proyección Legal</span>
+            </div>
+          </div>
+          
+          <!-- Hito 4: 2031 -->
+          <div class="relative md:text-center pl-8 md:pl-0 md:pt-8">
+            <!-- Timeline dot -->
+            <div class="absolute -left-[6px] top-2 md:left-1/2 md:-translate-x-1/2 md:top-1 w-4 h-4 bg-gold/50 border-4 border-onyx z-20"></div>
+            
+            <!-- Content Block -->
+            <div class="border border-[#2A2A2A] bg-onyx p-4 rounded-none group hover:border-gold transition-colors duration-300 flex flex-col h-full">
+              <span class="font-serif text-xl font-bold text-gold block mb-2">2031</span>
+              <div class="relative h-32 overflow-hidden mb-3 border border-[#2A2A2A]">
+                <img src="DESTINOS/GUATAPE.jpg" alt="Guatapé" class="w-full h-full object-cover">
+              </div>
+              <h4 class="font-serif text-sm font-bold text-white uppercase tracking-wider mb-1">Guatapé</h4>
+              <span class="text-[10px] font-sans text-gray-500 uppercase tracking-widest">Estudio de Suelos</span>
+            </div>
+          </div>
+          
+          <!-- Hito 5: 2033 -->
+          <div class="relative md:text-center pl-8 md:pl-0 md:pt-8">
+            <!-- Timeline dot -->
+            <div class="absolute -left-[6px] top-2 md:left-1/2 md:-translate-x-1/2 md:top-1 w-4 h-4 bg-gold/50 border-4 border-onyx z-20"></div>
+            
+            <!-- Content Block -->
+            <div class="border border-[#2A2A2A] bg-onyx p-4 rounded-none group hover:border-gold transition-colors duration-300 flex flex-col h-full">
+              <span class="font-serif text-xl font-bold text-gold block mb-2">2033</span>
+              <div class="relative h-32 overflow-hidden mb-3 border border-[#2A2A2A]">
+                <img src="DESTINOS/EJE.jpg" alt="Eje Cafetero" class="w-full h-full object-cover">
+              </div>
+              <h4 class="font-serif text-sm font-bold text-white uppercase tracking-wider mb-1">Eje Cafetero</h4>
+              <span class="text-[10px] font-sans text-gray-500 uppercase tracking-widest">Fase de Ubicación</span>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECCIÓN 8: UBICACIÓN                                                      -->
+    <!-- ========================================================================= -->
+    <section id="ubicacion" class="bg-onyx py-24 border-b border-[#2A2A2A]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Info Column -->
+          <div class="lg:col-span-5 space-y-6">
+            <span class="text-gold font-sans text-xs font-bold uppercase tracking-[0.2em]">Enclave Exclusivo</span>
+            <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white tracking-wide mt-2">
+              Ubicación de Alta Valorización.
+            </h2>
+            <div class="h-[2px] w-20 bg-gold mt-4 mb-6"></div>
+            
+            <p class="text-gray-300 text-sm sm:text-base font-light leading-relaxed">
+              Arroyo de Piedra es uno de los polos de expansión campestre y hotelera de mayor proyección en la Zona Norte del departamento de Bolívar. Su ubicación estratégica en el Kilómetro 18 facilita un rápido acceso a centros urbanos sin sacrificar la tranquilidad y el aislamiento del hotel de lujo.
+            </p>
+            
+            <div class="space-y-4 font-sans text-xs text-gray-400">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-car-side text-gold text-lg shrink-0"></i>
+                <span>A 20 minutos de la ciudad de Cartagena.</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-plane-departure text-gold text-lg shrink-0"></i>
+                <span>A 45 minutos del Aeropuerto de Barranquilla.</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Placeholder Map Area with solid blueprint styling -->
+          <div class="lg:col-span-7 border border-[#2A2A2A] bg-graphite p-4 relative rounded-none">
+            <div class="absolute inset-6 border border-gold/15 pointer-events-none z-20"></div>
+            
+            <!-- Map box -->
+            <div class="relative h-96 overflow-hidden bg-onyx flex flex-col items-center justify-center p-6 text-center border border-[#2A2A2A]">
+              <div class="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#C5A059_1px,transparent_1px),linear-gradient(to_bottom,#C5A059_1px,transparent_1px)] bg-[size:20px_20px] z-10"></div>
+              
+              <div class="text-gold mb-4 relative z-20">
+                <i class="fa-solid fa-map-location-dot text-5xl"></i>
+              </div>
+              <h4 class="font-serif text-base font-bold text-white uppercase tracking-wider mb-2 relative z-20">Arroyo de Piedra — Km 18</h4>
+              <p class="text-xs text-gray-400 max-w-sm mb-6 leading-relaxed relative z-20">
+                Playa privada y selva caribeña en una de las zonas inmobiliarias con mayor plusvalía proyectada en la costa norte colombiana.
+              </p>
+              
+              <!-- Simulation of technical GPS Coordinates -->
+              <span class="inline-block border border-gold/30 text-gold text-[9px] font-sans px-3 py-1 uppercase tracking-widest relative z-20 bg-onyx">
+                COORD: 10.5694° N, 75.3951° W
+              </span>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- FOOTER (BASE OSCURA MANDATORIA)                                           -->
+  <!-- ========================================================================= -->
+  <footer class="bg-onyx text-white border-t border-[#2A2A2A] pt-20 pb-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Footer Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-16 border-b border-[#2A2A2A]">
+        
+        <!-- Column 1: Brand & Logo -->
+        <div class="lg:col-span-4 flex flex-col space-y-6">
+          <a href="index.html" class="inline-block transition-transform duration-300 hover:scale-105 self-start">
+            <img src="LOGO-TATIANA-FOOTHER.svg" alt="TBARBOZA" class="h-24 w-auto max-w-[360px] object-contain">
+          </a>
+          <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed max-w-sm">
+            Especialistas en inversión inmobiliaria con proyectos de lotes en condominio.
+          </p>
+          <div class="flex items-center gap-3 text-gold">
+            <i class="fa-solid fa-award text-lg"></i>
+            <span class="font-sans text-[10px] font-bold uppercase tracking-widest text-white">Firma Legal & Brokerage Certificado</span>
+          </div>
+
+          <!-- Partners block -->
+          <div class="pt-4 border-t border-[#2A2A2A] flex flex-col space-y-2">
+            <span class="text-gray-500 font-sans text-[10px] font-bold uppercase tracking-widest">Aliados Propfy</span>
+            <img src="LOGO-PFY-BLANCO.svg" alt="Propfy Logo" class="h-6 w-auto self-start opacity-80 hover:opacity-100 transition-opacity duration-300">
+          </div>
+        </div>
+        
+        <!-- Column 2: Navigation Links -->
+        <div class="lg:col-span-4">
+          <h4 class="font-serif text-sm font-bold text-gold tracking-widest uppercase mb-6">Secciones del Proyecto</h4>
+          <ul class="grid grid-cols-2 gap-3 font-sans text-xs">
+            <li><a href="#inicio" class="text-gray-400 hover:text-white transition-colors duration-300 uppercase tracking-widest font-medium">El Proyecto</a></li>
+            <li><a href="#ficha-tecnica" class="text-gray-400 hover:text-white transition-colors duration-300 uppercase tracking-widest font-medium">Ficha Técnica</a></li>
+            <li><a href="#amenidades" class="text-gray-400 hover:text-white transition-colors duration-300 uppercase tracking-widest font-medium">Amenidades</a></li>
+            <li><a href="#galeria" class="text-gray-400 hover:text-white transition-colors duration-300 uppercase tracking-widest font-medium">Galería</a></li>
+            <li><a href="#inversion" class="text-gray-400 hover:text-white transition-colors duration-300 uppercase tracking-widest font-medium">Inversión</a></li>
+            <li><a href="#expansion" class="text-gray-400 hover:text-white transition-colors duration-300 uppercase tracking-widest font-medium">Expansión</a></li>
+            <li><a href="#ubicacion" class="text-gray-400 hover:text-white transition-colors duration-300 uppercase tracking-widest font-medium col-span-2">Ubicación</a></li>
+          </ul>
+        </div>
+        
+        <!-- Column 3: Contact Legal/Commercial (Tatiana Barboza) -->
+        <div class="lg:col-span-4 space-y-4">
+          <h4 class="font-serif text-sm font-bold text-gold tracking-widest uppercase mb-6">Contacto Directo</h4>
+          
+          <div class="space-y-3 font-sans text-xs leading-relaxed">
+            
+            <!-- Broker Name -->
+            <div class="border-b border-[#2A2A2A] pb-2">
+              <span class="block text-[10px] text-gold font-bold uppercase tracking-widest">Asesora Inmobiliaria y Jurídica</span>
+              <span class="text-sm font-bold text-white">Tatiana Barboza</span>
+            </div>
+            
+            <!-- WhatsApp / Phone -->
+            <div class="flex items-start gap-2.5">
+              <i class="fa-solid fa-phone text-gold mt-0.5 shrink-0"></i>
+              <div>
+                <span class="block text-[9px] text-gray-500 uppercase tracking-wider">Teléfono / WhatsApp</span>
+                <a href="https://wa.me/573007037180" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gold transition-colors duration-300 text-sm font-semibold">
+                  3007037180
+                </a>
+              </div>
+            </div>
+            
+            <!-- Email -->
+            <div class="flex items-start gap-2.5">
+              <i class="fa-solid fa-envelope text-gold mt-0.5 shrink-0"></i>
+              <div>
+                <span class="block text-[9px] text-gray-500 uppercase tracking-wider">Correo Electrónico</span>
+                <a href="mailto:Tatianabarbozabrokerinmobiliar@gmail.com" class="text-white hover:text-gold transition-colors duration-300 font-medium break-all">
+                  Tatianabarbozabrokerinmobiliar@gmail.com
+                </a>
+              </div>
+            </div>
+            
+            <!-- Local Address -->
+            <div class="flex items-start gap-2.5">
+              <i class="fa-solid fa-location-dot text-gold mt-0.5 shrink-0"></i>
+              <div>
+                <span class="block text-[9px] text-gray-500 uppercase tracking-wider">Atención Local</span>
+                <span class="text-gray-300">Br. 13 de junio, Diagonal 32 N68-09 conjunto Residencial terraza de los Alpes apto 101 bloque 8</span>
+              </div>
+            </div>
+            
+            <!-- Main Office Address -->
+            <div class="flex items-start gap-2.5">
+              <i class="fa-solid fa-building text-gold mt-0.5 shrink-0"></i>
+              <div>
+                <span class="block text-[9px] text-gray-500 uppercase tracking-wider">Dirección de Oficina Principal Fija</span>
+                <span class="text-gray-300">Kra 36 N. 247- 37 conjunto Residencial Puntalta Altagracia apto 110 torre 2</span>
+              </div>
+            </div>
+            
+            <!-- Schedule -->
+            <div class="flex items-start gap-2.5">
+              <i class="fa-solid fa-clock text-gold mt-0.5 shrink-0"></i>
+              <div>
+                <span class="block text-[9px] text-gray-500 uppercase tracking-wider">Horarios de Atención</span>
+                <span class="text-gray-300 block">Lunes a Viernes: 9:00 AM - 7:00 PM</span>
+                <span class="text-gray-300 block">Sábados: 9:00 AM - 5:00 PM</span>
+              </div>
+            </div>
+            
+            <!-- Digital Channels -->
+            <div class="pt-4 flex gap-4">
+              <a href="https://instagram.com/Tatybroker_inmobiliarioctg" target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-[#2A2A2A] hover:border-gold hover:text-gold flex items-center justify-center text-white transition-all duration-300 rounded-none bg-graphite" aria-label="Síguenos en Instagram @Tatybroker_inmobiliarioctg">
+                <i class="fa-brands fa-instagram text-base"></i>
+              </a>
+              <a href="https://instagram.com/pbju" target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-[#2A2A2A] hover:border-gold hover:text-gold flex items-center justify-center text-white transition-all duration-300 rounded-none bg-graphite" aria-label="Síguenos en Instagram @pbju">
+                <i class="fa-brands fa-instagram text-base"></i>
+              </a>
+              <a href="https://facebook.com/asesoriasinmobiliariasyjuridicasTbarboza" target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-[#2A2A2A] hover:border-gold hover:text-gold flex items-center justify-center text-white transition-all duration-300 rounded-none bg-graphite" aria-label="Síguenos en Facebook Asesorías Inmobiliarias y Jurídicas Tbarboza">
+                <i class="fa-brands fa-facebook-f text-base"></i>
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- Footer Copyright Section -->
+      <div class="pt-10 flex flex-col sm:flex-row justify-between items-center text-gray-500 text-[10px] font-sans uppercase tracking-widest gap-4">
+        <div>
+          &copy; 2026 TBARBOZA. Todos los derechos reservados.
+        </div>
+        <div class="flex gap-4">
+          <a href="#" class="hover:text-gold transition-colors duration-300">Política de Privacidad</a>
+          <span>|</span>
+          <a href="#" class="hover:text-gold transition-colors duration-300">Aviso Legal</a>
+        </div>
+      </div>
+      
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL: AGENDAR CITA                                                       -->
+  <!-- ========================================================================= -->
+  <div id="modal-appointment" class="fixed inset-0 z-50 overflow-y-auto hidden" aria-labelledby="modal-appointment-title" role="dialog" aria-modal="true">
+    <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+      
+      <div class="fixed inset-0 bg-black/85 transition-opacity" aria-hidden="true" onclick="closeAppointmentModal()"></div>
+
+      <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+      <div class="inline-block align-bottom bg-graphite border border-gold text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg w-full rounded-none relative">
+        
+        <!-- Close icon -->
+        <button onclick="closeAppointmentModal()" type="button" class="absolute top-4 right-4 text-white/70 hover:text-gold hover:scale-110 transition-all duration-300 z-10 w-8 h-8 border border-[#2A2A2A] flex items-center justify-center bg-onyx focus:outline-none" aria-label="Cerrar modal">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+        
+        <!-- Modal Success Message (Initially Hidden) -->
+        <div id="appointment-success" class="hidden absolute inset-0 bg-graphite z-30 flex flex-col items-center justify-center text-center p-8">
+          <div class="text-gold border border-gold/30 p-4 mb-4">
+            <i class="fa-solid fa-calendar-check text-4xl"></i>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-white mb-2">Cita Solicitada</h3>
+          <p class="text-gray-300 text-sm max-w-sm mb-6 leading-relaxed">
+            Su solicitud de cita comercial para **Mayatt** ha sido registrada. La Asesora Jurídica e Inmobiliaria Tatiana Barboza se comunicará con usted en el número provisto para validar la fecha y hora seleccionadas.
+          </p>
+          <button onclick="closeAppointmentModal()" class="bg-transparent border border-gold text-gold font-sans font-bold uppercase text-xs py-3 px-6 tracking-widest hover:bg-gold hover:text-onyx transition-all duration-300 rounded-none">
+            Cerrar Ventana
+          </button>
+        </div>
+
+        <form id="appointment-form" onsubmit="handleAppointmentSubmit(event)" class="p-6 sm:p-8 space-y-6">
+          <div class="flex items-center gap-3 border-b border-[#2A2A2A] pb-3">
+            <i class="fa-solid fa-calendar-days text-xl text-gold"></i>
+            <h3 class="font-serif text-lg font-bold text-white uppercase tracking-wider" id="modal-appointment-title">
+              Agendar Cita Comercial
+            </h3>
+          </div>
+          
+          <p class="text-gray-400 text-xs font-light leading-relaxed">
+            Complete sus datos para agendar una sesión personalizada de presentación de activos e informe jurídico sobre el proyecto **Mayatt Eco Luxury Hotel**.
+          </p>
+          
+          <!-- Name -->
+          <div>
+            <label for="appt-name" class="block text-[10px] font-sans font-bold uppercase tracking-widest text-gray-400 mb-2">Nombre completo *</label>
+            <input type="text" id="appt-name" required class="w-full bg-onyx text-white border border-[#3A3A3A] px-4 py-3 text-xs font-sans tracking-wide transition-colors duration-300 rounded-none" placeholder="Escriba su nombre y apellido">
+          </div>
+          
+          <!-- Contact Info Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="appt-email" class="block text-[10px] font-sans font-bold uppercase tracking-widest text-gray-400 mb-2">Correo electrónico *</label>
+              <input type="email" id="appt-email" required class="w-full bg-onyx text-white border border-[#3A3A3A] px-4 py-3 text-xs font-sans tracking-wide transition-colors duration-300 rounded-none" placeholder="ejemplo@correo.com">
+            </div>
+            <div>
+              <label for="appt-phone" class="block text-[10px] font-sans font-bold uppercase tracking-widest text-gray-400 mb-2">Teléfono *</label>
+              <input type="tel" id="appt-phone" required class="w-full bg-onyx text-white border border-[#3A3A3A] px-4 py-3 text-xs font-sans tracking-wide transition-colors duration-300 rounded-none" placeholder="Ej. 3007037180">
+            </div>
+          </div>
+          
+          <!-- Date / Time Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="appt-date" class="block text-[10px] font-sans font-bold uppercase tracking-widest text-gray-400 mb-2">Fecha propuesta *</label>
+              <input type="date" id="appt-date" required class="w-full bg-onyx text-white border border-[#3A3A3A] px-4 py-3 text-xs font-sans tracking-wide transition-colors duration-300 rounded-none">
+            </div>
+            <div>
+              <label for="appt-time" class="block text-[10px] font-sans font-bold uppercase tracking-widest text-gray-400 mb-2">Hora sugerida *</label>
+              <select id="appt-time" required class="w-full bg-onyx text-white border border-[#3A3A3A] px-4 py-3 text-xs font-sans tracking-wide transition-colors duration-300 rounded-none cursor-pointer">
+                <option value="9:00 AM">09:00 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="2:00 PM">02:00 PM</option>
+                <option value="4:00 PM">04:00 PM</option>
+                <option value="6:00 PM">06:00 PM</option>
+              </select>
+            </div>
+          </div>
+          
+          <!-- Submit Button -->
+          <button type="submit" class="w-full bg-gold text-onyx border border-gold font-sans font-bold uppercase text-xs py-3.5 px-6 tracking-widest hover:bg-transparent hover:text-gold transition-all duration-300 rounded-none">
+            Confirmar Solicitud de Cita
+          </button>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL: DESCARGAR BROCHURE                                                 -->
+  <!-- ========================================================================= -->
+  <div id="modal-brochure" class="fixed inset-0 z-50 overflow-y-auto hidden" aria-labelledby="modal-brochure-title" role="dialog" aria-modal="true">
+    <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+      
+      <div class="fixed inset-0 bg-black/85 transition-opacity" aria-hidden="true" onclick="closeBrochureModal()"></div>
+
+      <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+      <div class="inline-block align-bottom bg-graphite border border-gold text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg w-full rounded-none relative">
+        
+        <!-- Close icon -->
+        <button onclick="closeBrochureModal()" type="button" class="absolute top-4 right-4 text-white/70 hover:text-gold hover:scale-110 transition-all duration-300 z-10 w-8 h-8 border border-[#2A2A2A] flex items-center justify-center bg-onyx focus:outline-none" aria-label="Cerrar modal">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+        
+        <!-- Success Message -->
+        <div id="brochure-success" class="hidden absolute inset-0 bg-graphite z-30 flex flex-col items-center justify-center text-center p-8">
+          <div class="text-gold border border-gold/30 p-4 mb-4">
+            <i class="fa-solid fa-file-circle-check text-4xl"></i>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-white mb-2">Brochure Listo</h3>
+          <p class="text-gray-300 text-sm max-w-sm mb-6 leading-relaxed">
+            Se ha iniciado la descarga del dossier técnico descriptivo del proyecto **Mayatt Eco Luxury Hotel**.
+          </p>
+          <div class="space-y-3 w-full">
+            <!-- Simulated Download Button -->
+            <a href="Mayatt%20portada.jpeg" download class="block w-full text-center bg-gold text-onyx border border-gold font-sans font-bold uppercase text-xs py-3 px-6 tracking-widest hover:bg-transparent hover:text-gold transition-all duration-300 rounded-none">
+              ¿No inició? Descargar Nuevamente
+            </a>
+            <button onclick="closeBrochureModal()" class="block w-full text-center bg-transparent border border-[#2A2A2A] text-gray-400 font-sans font-bold uppercase text-xs py-3 px-6 tracking-widest hover:border-gold hover:text-gold transition-all duration-300 rounded-none">
+              Cerrar Ventana
+            </button>
+          </div>
+        </div>
+
+        <form id="brochure-form" onsubmit="handleBrochureSubmit(event)" class="p-6 sm:p-8 space-y-6">
+          <div class="flex items-center gap-3 border-b border-[#2A2A2A] pb-3">
+            <i class="fa-solid fa-file-pdf text-xl text-gold"></i>
+            <h3 class="font-serif text-lg font-bold text-white uppercase tracking-wider" id="modal-brochure-title">
+              Descargar Dossier Técnico
+            </h3>
+          </div>
+          
+          <p class="text-gray-400 text-xs font-light leading-relaxed">
+            Ingrese sus datos para descargar el Brochure Oficial de **Mayatt Eco Luxury Hotel**, que incluye planos de las cabañas y detalles legales de escrituración.
+          </p>
+          
+          <!-- Name -->
+          <div>
+            <label for="brochure-name" class="block text-[10px] font-sans font-bold uppercase tracking-widest text-gray-400 mb-2">Nombre completo *</label>
+            <input type="text" id="brochure-name" required class="w-full bg-onyx text-white border border-[#3A3A3A] px-4 py-3 text-xs font-sans tracking-wide transition-colors duration-300 rounded-none" placeholder="Escriba su nombre y apellido">
+          </div>
+          
+          <!-- Contact Info Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="brochure-email" class="block text-[10px] font-sans font-bold uppercase tracking-widest text-gray-400 mb-2">Correo electrónico *</label>
+              <input type="email" id="brochure-email" required class="w-full bg-onyx text-white border border-[#3A3A3A] px-4 py-3 text-xs font-sans tracking-wide transition-colors duration-300 rounded-none" placeholder="ejemplo@correo.com">
+            </div>
+            <div>
+              <label for="brochure-phone" class="block text-[10px] font-sans font-bold uppercase tracking-widest text-gray-400 mb-2">Teléfono *</label>
+              <input type="tel" id="brochure-phone" required class="w-full bg-onyx text-white border border-[#3A3A3A] px-4 py-3 text-xs font-sans tracking-wide transition-colors duration-300 rounded-none" placeholder="Ej. 3007037180">
+            </div>
+          </div>
+          
+          <!-- Submit Button -->
+          <button type="submit" class="w-full bg-gold text-onyx border border-gold font-sans font-bold uppercase text-xs py-3.5 px-6 tracking-widest hover:bg-transparent hover:text-gold transition-all duration-300 rounded-none">
+            Obtener Brochure PDF
+          </button>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Dynamic floating WhatsApp shortcut -->
+  <a href="https://wa.me/573007037180?text=Hola,%20solicito%20asesoria%20sobre%20el%20proyecto%20Mayatt" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-40 bg-[#25D366] text-white hover:bg-[#20ba5a] w-14 h-14 flex items-center justify-center hover:scale-110 hover:-translate-y-1 transition-all duration-300 shadow-xl border border-white/25 rounded-none" aria-label="Contacto directo por WhatsApp">
+    <i class="fa-brands fa-whatsapp text-3xl"></i>
+  </a>
+
+  <!-- ========================================================================= -->
+  <!-- JAVASCRIPT DYNAMIC INTERACTIONS                                           -->
+  <!-- ========================================================================= -->
+  <script>
+    
+    // ==========================================
+    // 1. MOBILE MENU TOGGLE
+    // ==========================================
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const icon = mobileMenuBtn.querySelector('i');
+        if (icon) {
+          if (mobileMenu.classList.contains('hidden')) {
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+          } else {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-xmark');
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+          }
+        }
+      });
+      
+      // Close menu when clicking a link
+      const links = mobileMenu.querySelectorAll('a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          const icon = mobileMenuBtn.querySelector('i');
+          if (icon) {
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+          }
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // ==========================================
+    // 2. MODAL CONTROLS (APPOINTMENT & BROCHURE)
+    // ==========================================
+    
+    // Appointment Modal
+    function openAppointmentModal(source) {
+      console.log("Modal abierto desde:", source);
+      const modal = document.getElementById('modal-appointment');
+      if (modal) {
+        modal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      }
+    }
+    
+    function closeAppointmentModal() {
+      const modal = document.getElementById('modal-appointment');
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+      // Reset success overlay
+      const successOverlay = document.getElementById('appointment-success');
+      if (successOverlay) {
+        successOverlay.classList.add('hidden');
+      }
+      const form = document.getElementById('appointment-form');
+      if (form) {
+        form.reset();
+      }
+    }
+    
+    // Brochure Modal
+    function openBrochureModal() {
+      const modal = document.getElementById('modal-brochure');
+      if (modal) {
+        modal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      }
+    }
+    
+    function closeBrochureModal() {
+      const modal = document.getElementById('modal-brochure');
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+      // Reset success overlay
+      const successOverlay = document.getElementById('brochure-success');
+      if (successOverlay) {
+        successOverlay.classList.add('hidden');
+      }
+      const form = document.getElementById('brochure-form');
+      if (form) {
+        form.reset();
+      }
+    }
+
+    // ==========================================
+    // 3. FORM SUBMISSIONS
+    // ==========================================
+    
+    function handleAppointmentSubmit(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById('appt-name').value;
+      const email = document.getElementById('appt-email').value;
+      const phone = document.getElementById('appt-phone').value;
+      const date = document.getElementById('appt-date').value;
+      const time = document.getElementById('appt-time').value;
+      
+      console.log("Cita Solicitada — Mayatt:");
+      console.log("Nombre:", name);
+      console.log("Email:", email);
+      console.log("Teléfono:", phone);
+      console.log("Fecha:", date);
+      console.log("Hora:", time);
+      
+      const successOverlay = document.getElementById('appointment-success');
+      if (successOverlay) {
+        successOverlay.classList.remove('hidden');
+      }
+    }
+    
+    function handleBrochureSubmit(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById('brochure-name').value;
+      const email = document.getElementById('brochure-email').value;
+      const phone = document.getElementById('brochure-phone').value;
+      
+      console.log("Solicitud de Brochure — Mayatt:");
+      console.log("Nombre:", name);
+      console.log("Email:", email);
+      console.log("Teléfono:", phone);
+      
+      // Show success download modal
+      const successOverlay = document.getElementById('brochure-success');
+      if (successOverlay) {
+        successOverlay.classList.remove('hidden');
+        
+        // Trigger actual simulated download of the cover image as brochure layout representation
+        const downloadLink = document.createElement('a');
+        downloadLink.href = 'Mayatt%20portada.jpeg';
+        downloadLink.download = 'Brochure_Mayatt_Eco_Luxury.jpeg';
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+      }
+    }
+
+  </script>
+</body>
+</html>
